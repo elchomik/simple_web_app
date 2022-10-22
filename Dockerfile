@@ -19,7 +19,7 @@ RUN chmod 400 /root/.ssh/id_rsa
 RUN touch /root/.ssh/config
 RUN chmod 700 /root/.ssh/config
 RUN echo $'Host git \n HostName github.com \n AddKeysToAgent yes \n PreferredAuthentications publickey \n IdentityFile /root/.ssh/id_rsa' > /root/.ssh/config
-RUN git clone git@github.com:elchomik/simple_web_app.git
+RUN git clone git@github.com:elchomik/simple_web_app.git .
 RUN npm install 
 
 CMD ["npm", "start"]
